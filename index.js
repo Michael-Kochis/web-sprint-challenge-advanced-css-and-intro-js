@@ -305,6 +305,7 @@ function addArtist(array){
       bio: "Mike is not happy.  All of his tests are not passing yet.",
     }
     array.push(addThisArtist);
+    return array;
   }
 
   
@@ -318,6 +319,13 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 function lotsOfArt(array){
   let returnThis = [];
+  let size = array.length;
+
+  for (let i = 0; i < size; i++) {
+    if (array[i].paintings > 100) {
+      returnThis.push(array[i].name);
+    }
+  }
 
   return returnThis;
 }
